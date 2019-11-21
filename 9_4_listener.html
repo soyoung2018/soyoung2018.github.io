@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    ol {      color:red;       }
+    p  {      color:black;     }
+    span {
+      visibility : hidden;
+      color : blue;
+    }
+    a{
+      font-size:30px;
+      background-color:yellow;
+    }
+    h3{
+      color:green;
+      font-weight: bold;
+    }
+    #box{
+      padding-left: 20px;
+    	border:1px solid green;
+      width:500px;
+    	height:300px;
+    }
+    ul{
+      list-style: none;
+    }
+
+      </style>
+      <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+      <script>
+      function show() {
+           var obj =document.getElementById("span");
+           var style = window.getComputedStyle(obj);
+           var v = style.getPropertyValue("visibility");
+          if(v == "hidden")
+            obj.style.visibility = "visible";
+          else
+            obj.style.visibility = "hidden";
+        }
+      </script>
+      <script>
+          var sp;
+          function other(){
+            sp  = document.getElementById("sp");
+            sp.onmouseover =function(){
+                this.style.fontSize = "50px";
+                this.style.color ="green";
+            };
+            sp.onmouseout = function(){
+              this.style.fontStyle = "italic";
+            };
+          }
+      </script>
+  </head>
+  <body>
+    <h2>9장 이벤트 기초 및 활용</h2>
+    <h3>이벤트가 발생하면 브라우저는 개발자가 작성한 이벤트리스너 코드를 호출하여 이벤트를 처리한다.</h3>
+    <hr>
+    <ul>
+  <li>other()를 익명함수로 작성하여 onclick리스너로 등록하라
+    <button onclick="show()"><br>
+    답확인</button><br>
+      <ul><li>
+        <div id="sp" onclick ="other()">마우스를 올리면????</div></li>
+      &lt;div id="sp" onclick ="other()">마우스를 올리면????&lt;/div>
+            <li id="box"><span id = "span">
+              function other(){<br>
+                   sp  = document.getElementById("sp");<br><br>
+                   sp.onmouseover =function(){<br>
+                   this.style.fontSize = "50px";<br>
+                   this.style.color ="green";<br>
+                  };<br><br>
+                   sp.onmouseout = function(){<br>
+                     this.style.fontStyle = "italic";<br>
+              };<br>
+            }</span></li>
+
+      </ul>
+ <a href ="index.html">home</a>
+  </body>
+</html>

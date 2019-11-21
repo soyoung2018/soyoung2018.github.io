@@ -1,0 +1,74 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">    <title></title>
+    <style>
+      ol,ul { color:red;  list-style:none;   }
+      p     { color:black;     }
+      span  { visibility : hidden;  color : blue;  }
+      a{      font-size:30px;
+              background-color:yellow;
+      }
+      h3{
+        color:green;
+        font-weight: bold;
+      }
+      #box{
+        padding-left: 20px;
+        border:1px solid green;
+        width:400px;
+        height:130px;
+      }
+      #problem{  color:red;  }
+      img{
+        width:300px;
+        height:150px;
+        border: 1px solid black;
+      }
+      </style>
+      <script src ="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+      <script>
+      function show() {
+           var obj =document.getElementById("span");
+           var style = window.getComputedStyle(obj);
+           var v = style.getPropertyValue("visibility");
+          if(v == "hidden")
+            obj.style.visibility = "visible";
+          else
+            obj.style.visibility = "hidden";
+        }
+      </script>
+  </head>&nbsp;&nbsp;&nbsp;
+  <body>
+    <h2>9장 이벤트 기초 및 활용</h2>
+    <h3>
+    </h3><hr>
+    <ul>&nbsp;&nbsp;&nbsp;
+    <li> <h3 id="problem"><b style="color:black">문제:</b>
+      배열에 이미지들을 저장한후 이미지객체로 만들어 출력속도를 높이고자한다.<br>
+      코드영역에 배열에 있는 이미지들을 객체화하시오.
+      <p><img  src="img/9_8_newImage.png"width ="100px" height="100px"></p></li>
+         <p style ="color:green">
+           var files = ["media/Penguins.png",   <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  "media/Lighthouse.png",<br>
+              &nbsp;&nbsp;&nbsp;        "media/Chrysanthemum.png",   <br>
+            &nbsp;&nbsp;&nbsp;          "media/Desert.png",          <br>
+              &nbsp;&nbsp;&nbsp;        "media/Hydrangeas.png",      <br>
+            &nbsp;&nbsp;&nbsp;          "media/Jellyfish.png",       <br>
+            &nbsp;&nbsp;&nbsp;          "media/Koala.png",           <br>
+            &nbsp;&nbsp;&nbsp;          "media/Tulips.png"];         <br>
+           <br>
+          <ins>  코드</ins><br>
+           <br>
+
+      <li id ="box"> 답  <button onclick="show()">답확인</button><br>
+      <span id ="span">
+        var imgs = new Array();<br>
+        for(var i=0; i<'files.length;  i++) {   <br>
+         imgs[i] = new Image();    <br>
+         imgs[i].src = files[i];    <br>
+        }
+        </span>
+    </li>
+  </ul>  <a href ="index.html">home</a>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">    <title></title>
+    <style>
+      ol,ul { color:red;  list-style:none;   }
+      p     { color:black;     }
+      span  { visibility : hidden;  color : blue;  }
+      a{      font-size:30px;
+              background-color:yellow;
+      }
+      h3{
+        color:green;
+        font-weight: bold;
+      }
+      #box{
+        padding-left: 20px;
+        border:1px solid green;
+        width:300px;
+        height:150px;
+        font-weight: bold;
+      }
+      #problem{  color:red;  }
+      img{
+        width:100px;
+        height:90px;
+        border: 1px solid black;
+      }
+      </style>
+      <script src ="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+      <script>
+      function show() {
+           var obj =document.getElementById("span");
+           var style = window.getComputedStyle(obj);
+           var v = style.getPropertyValue("visibility");
+          if(v == "hidden")
+            obj.style.visibility = "visible";
+          else
+            obj.style.visibility = "hidden";
+        }
+      </script>
+  </head>
+  <body>
+  <h2>Jquery</h2><hr>
+    <ul>
+    <li> <h3 id="problem"><b style="color:black">문제:</b>
+    	숨기기버튼을 클릭하면 이미지가 사라지기</li>
+         <ol type ="1" style ="color:green">
+           <li></li>
+           <li> </li>
+           <li></li>
+           <li></li>
+        </ol><br>
+      <li id ="box"> 답  <button onclick="show()">답확인</button><br>
+     $(document).ready(function(){<br>
+      <span id ="span">
+        $(document).ready(function( ){<br>
+        &nbsp;&nbsp;&nbsp;
+        });
+        </span>
+    </li>
+  </ul>  <a href ="index.html">home</a>
+  </body>
+</html>

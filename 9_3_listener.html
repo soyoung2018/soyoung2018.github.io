@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head><meta charset="utf-8"><title></title>
+    <style>
+      ol {      color:red;       }
+      p  {      color:black;     }
+      span {
+      	visibility : hidden;
+      	color : blue;
+      }
+      a{
+        font-size:30px;
+        background-color:yellow;
+      }
+      h3{
+        color:green;
+        font-weight: bold;
+      }
+      #box{
+        padding-left: 20px;
+      	border:1px solid green;
+        width:400px;
+      	height:150px;
+      }
+      </style>
+      <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+      <script>
+      function show() {
+      	   var obj =document.getElementById("span");
+      	   var style = window.getComputedStyle(obj);
+      	    var v = style.getPropertyValue("visibility");
+      		if(v == "hidden")
+      			obj.style.visibility = "visible";
+      		else
+      			obj.style.visibility = "hidden";
+      	}
+      </script>
+      <script>
+          var pp;
+          function fover(){
+            pp.style.backgroundColor ="orange";
+            pp.style.backgroundColor ="orange";
+          }
+          function fout(){
+            pp.style.backgroundColor ="green";
+            pp.style.fontSize ="30px"
+            pp.style.backgroundColor ="red";
+          }
+          function addL(){
+            pp = document.getElementById("pp");
+            pp.addEventListener("mouseover",fover);
+            pp.addEventListener("mouseout", fout);
+          }
+      </script>
+  </head>
+  <body>
+    <h2>9장 이벤트 기초 및 활용</h2>
+    <h3>이벤트가 발생하면 브라우저는 개발자가 작성한 이벤트리스너 코드를 호출하여 이벤트를 처리한다.</h3>
+    <hr>
+    <ul>
+    <li>p 태그를 클릭하면 addL()메소드가 실행하도록 addEventListener()(제공되는 함수임)를 이용하여
+      이벤트리스너를 등록하라
+    <p id ="pp" onclick = "addL()">마우스를!!~~~</p></li>
+<li id ="box">
+&lt;p id ="pp" onclick = "addL()">마우스를!!~~~&lt;/p>  <br>
+<button onclick="show()">답확인</button><br>
+      <span id ="span">
+          function addL(){<br>
+              <ins>pp = document.getElementById("pp");</ins>
+             <br>pp.addEventListener("mouseover",fover);
+             <br>pp.addEventListener("mouseout", fout);<br>
+           }
+
+      </span></li>
+      <h3>script 태그안에 있는 함수들</h3>
+      var pp;                              <br>
+      function fover(){                    <br>
+        pp.style.backgroundColor ="orange";<br>
+      }                                    <br>
+      function fout(){                      <br>
+        pp.style.backgroundColor ="red";<br>
+        pp.style.fontSize ="30px";        <br>
+      }                                 <br>
+  </ul>
+
+    <a href ="index.html">home</a>
+  </body>
+</html>

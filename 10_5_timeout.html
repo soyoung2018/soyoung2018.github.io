@@ -1,0 +1,67 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">    <title></title>
+    <style>
+      ol,ul { color:red;  list-style:none;   }
+      p     { color:black;     }
+      span  { visibility : hidden;  color : blue;  }
+      a{      font-size:30px;
+              background-color:yellow;
+      }
+      h3{
+        color:green;
+        font-weight: bold;
+      }
+      #box{
+        padding-left: 20px;
+        border:1px solid green;
+        width:500px;
+        height:120px;
+        font-weight: bold;
+      }
+      #problem{  color:red;  }
+      img{
+        width:300px;
+        height:300px;
+        border: 1px solid black;
+      }
+      </style>
+      <script src ="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+      <script>
+      function show() {
+           var obj =document.getElementById("span");
+           var style = window.getComputedStyle(obj);
+           var v = style.getPropertyValue("visibility");
+          if(v == "hidden")
+            obj.style.visibility = "visible";
+          else
+            obj.style.visibility = "hidden";
+        }
+      </script>
+  </head>
+  <body>
+  <h2>10장 윈도우와 브라우저 관련 객체</h2><h3></h3><hr>
+    <ul>&nbsp;&nbsp;&nbsp;
+    <li> <h3 id="problem"><b style="color:black">문제:</b>
+      타임아웃 지연 시간과 타임아웃코드를 1회 지정하기 </li>
+         <ol type ="1" style ="color:green">
+           <li> <button onclick = “ff()”>click</button>
+                 button onclick = “ff( )”</li>
+           <li>click 버튼을 틀릭할때 ff( )함수가 호출하여<br>
+          &nbsp;&nbsp;&nbsp;    3초후 경고창이 뜨도록 프로그래밍하시오. </li>
+           <li></li>
+           <li></li>
+         </ol><br>
+      <li id ="box"> 답  <button onclick="show()">답확인</button><br>
+      <span id ="span">
+        function ff(){<br>
+        &nbsp;&nbsp;&nbsp;
+          setTimeout( function( ){   <br>
+        &nbsp;&nbsp;&nbsp;
+          alert(“3초후 경고창입니다.”) }, 3000 );<br>
+          }
+        </span>
+    </li>
+  </ul>  <a href ="index.html">home</a>
+  </body>
+</html>

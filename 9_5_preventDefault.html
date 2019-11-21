@@ -1,0 +1,77 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">    <title></title>
+    <style>
+      ul {      color:red;
+                 list-style:none;   }
+      p  {      color:black;     }
+      span {
+        visibility : hidden;
+        color : blue;
+      }
+      a{
+        font-size:30px;
+        background-color:yellow;
+      }
+      h3{
+        color:green;
+        font-weight: bold;
+      }
+      #problem{
+        color:red;
+      }
+      #box{
+        padding-left: 20px;
+        border:1px solid green;
+        width:400px;
+        height:100px;
+      }
+      img{
+        width:300px;
+        height:110px;
+        border: 1px solid black;
+      }
+      </style>
+      <script src ="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+      <script>
+      function show() {
+           var obj =document.getElementById("span");
+           var style = window.getComputedStyle(obj);
+           var v = style.getPropertyValue("visibility");
+          if(v == "hidden")
+            obj.style.visibility = "visible";
+          else
+            obj.style.visibility = "hidden";
+        }
+      </script>
+  </head>
+  <body>
+      <h2>9장 이벤트 기초 및 활용</h2>
+    <h3>
+    </h3><hr>
+    <ul>
+    <li><h3 id="problem"><b style="color:black">문제:</b> 체크박스선택시 디폴트로 선택이 이루어진다. <br>
+      다음보여지는 화면에서 <br>
+      술에 해당하는 체크박스는 선택이 되지않도록 하기 위해
+      <div style ="color:green">action 함수처리</div>시 이벤트의 디폴트행동취소함수를 호출하여 소스를 완성하시오</h3></li>
+      <li><img src ="img/defaultevent.jpg" ></li>
+      <li>
+이벤트의 디폴트 행동 취소<br>
+<hr>
+<li>
+  <p><b>
+  &lt;form><br>
+      &lt;input type="checkbox" >빵(체크 됨)<br>
+      &lt;input type="checkbox"	onclick="action(event)</span>">술(체크 안됨)<br>
+    &lt;/form></li>
+</b>  </p></li>
+      <li id ="box"> 답  <button onclick="show()">답확인</button><br>
+      <span id ="span">
+        function action(e) {<br>
+        &nbsp;&nbsp;&nbsp;	e.preventDefault( );<br>
+        }
+        </span>
+    </li>
+  </ul>  <a href ="index.html">home</a>
+  </body>
+</html>

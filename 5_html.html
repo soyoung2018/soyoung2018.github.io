@@ -1,0 +1,84 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">    <title></title>
+    <style>
+      ol,ul { color:red;  list-style:none;   }
+      p     { color:black;     }
+      span  { visibility : hidden;  color : blue;  }
+      a{      font-size:30px;
+              background-color:yellow;
+      }
+      h3{
+        color:green;
+        font-weight: bold;
+      }
+      #box{
+        padding-left: 20px;
+        border:1px solid green;
+        width:400px;
+        height:160px;
+        font-weight: bold;
+      }
+      #problem{  color:red;  }
+      img{
+        width:100px;
+        height:100px;
+        border: 1px solid black;
+      }
+      div{
+          border:2px dotted blue;
+          border-radius: 20px;
+          width:300px;
+          color:blue;
+          font-weight: bold;
+          padding-left: 20px;
+        }
+      </style>
+      <script src ="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+      <script>
+      function show() {
+           var obj =document.getElementById("span");
+           var style = window.getComputedStyle(obj);
+           var v = style.getPropertyValue("visibility");
+          if(v == "hidden")
+            obj.style.visibility = "visible";
+          else
+            obj.style.visibility = "hidden";
+        }
+      </script>
+      <script>
+      $(document).ready(function(){
+        $("#p").click(function(){
+          $("div").html("<p>스터디주제:제이쿼리</p><p>모집대상:남학생</p>");
+        });
+      });
+      </script>
+  </head>
+  <body>
+  <h2>Jquery</h2><hr>
+    <ul>
+    <li> <h3 id="problem"><b style="color:black">문제:</b>
+      jquery에서 안보이던 글자 내용을 보이도록 프로그래밍하기 </li>
+         <ol type ="1" style ="color:green">
+          <li>자세한 사항 이라는 글자를 클릭시 <br>
+          파란 점선영역인 div영역에 새로운 글자들을 보이도록 프로그래밍하시오.</li>
+           <li><<img src = "img/click.jpg">
+           <p id ="p">자세한 사항은 여기를 클릭하세요</p>
+           <div></div></li>
+         </ol><br>
+         &lt;p id ="p">자세한 사항은 여기를 클릭하세요  &lt;/p><br>
+         &lt;div>  &lt;/div>
+      <li id ="box"> 답  <button onclick="show()">답확인</button><br>
+       $(document).ready(function(){<br>
+      <span id ="span">
+        &nbsp;&nbsp;    $("#p").click(function(){<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        $("div").html("스터디주제:제이쿼리<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        모집대상:2학년");<br>
+        &nbsp;&nbsp;  });<br>
+        &nbsp;&nbsp;&nbsp;  });
+</span></li>
+  </ul>  <a href ="index.html">home</a>
+  </body>
+</html>

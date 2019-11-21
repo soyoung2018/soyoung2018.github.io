@@ -1,0 +1,77 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">    <title></title>
+    <style>
+      ol,ul { color:red;  list-style:none;   }
+      p     { color:black;     }
+      span  { visibility : hidden;  color : blue;  }
+      a{      font-size:30px;
+              background-color:yellow;
+      }
+      h3{
+        color:green;
+        font-weight: bold;
+      }
+      #box{
+        padding-left: 20px;
+        border:1px solid green;
+        width:400px;
+        height:230px;
+      }
+      #problem{  color:red;  }
+      img{
+        width:300px;
+        height:150px;
+        border: 1px solid black;
+      }
+      </style>
+      <script src ="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+      <script>
+      function show() {
+           var obj =document.getElementById("span");
+           var style = window.getComputedStyle(obj);
+           var v = style.getPropertyValue("visibility");
+          if(v == "hidden")
+            obj.style.visibility = "visible";
+          else
+            obj.style.visibility = "hidden";
+        }
+      </script>
+      <script>
+
+        </script>
+  </head>
+  <body>
+    <h2>9장 이벤트 기초 및 활용</h2><hr>
+    <ul>&nbsp;&nbsp;&nbsp;
+    <li> <h3 id="problem"><b style="color:black">문제:</b>
+    onclick시 <ins>calc(this)</ins>메소드 부분을 완성하도록 한다.
+      <img  src="img/a9_10shoppingmall.png"width ="100px" height="100px"></li>
+         <p style ="color:green">
+           &lt;form><br>
+           &lt;input type="checkbox" name="hap" value="10000"
+         		onclick="calc(this)"/>모자 1만원<br>
+         	&lt;input type="checkbox" name="shose" value="30000"
+         		onclick="calc(this)"/>구두 3만원<br>
+         	&lt;input type="checkbox" name="bag" value="80000"
+         		onclick="calc(this)"/>명품가방 8만원<br>
+           	지불하실 금액 &lt;input type="text" id="sumtext" value="0" /><br>
+           &lt;/form><br>
+      <li id ="box">
+        var sum=0;<br>
+        var submit = document.getElementById("sumtext");<br>
+          <button onclick="show()">답확인</button><br>
+      <span id ="span">
+        function calc(obj) {<br>
+      &nbsp;   if(obj.checked)<br>
+      &nbsp;&nbsp;&nbsp; sum += parseInt(obj.value);<br>
+      &nbsp;  else<br>
+      &nbsp;&nbsp;&nbsp; sum -= parseInt(obj.value);<br>
+      &nbsp;&nbsp;&nbsp; submit.value = sum;<br>
+      &nbsp;&nbsp;&nbsp;  }
+        </span>
+    </li>
+  </ul>
+  <a href ="index.html">home</a>
+  </body>
+</html>

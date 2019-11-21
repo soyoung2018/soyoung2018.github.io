@@ -1,0 +1,88 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">    <title></title>
+    <style>
+      ol,ul { color:red;  list-style:none;   }
+      p     { color:black;     }
+      span  { visibility : hidden;  color : blue;  }
+      a{      font-size:30px;
+              background-color:yellow;
+      }
+      h3{
+        color:green;
+        font-weight: bold;
+      }
+      #box{
+        padding-left: 20px;
+        border:1px solid green;
+        width:300px;
+        height:200px;
+        font-weight: bold;
+      }
+      #problem{  color:red;  }
+      div{
+       background:#98bf21;
+       height:100px;
+       width:100px;
+       position:absolute;
+     }
+      </style>
+      <script src ="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+      <script>
+      function show() {
+           var obj =document.getElementById("span");
+           var style = window.getComputedStyle(obj);
+           var v = style.getPropertyValue("visibility");
+          if(v == "hidden")
+            obj.style.visibility = "visible";
+          else
+            obj.style.visibility = "hidden";
+        }
+      </script>
+      <script>
+      $(document).ready(function(){
+          $("button").click(function(){
+              $("div").animate({left: '150px'});
+          });
+      });
+      </script>
+  </head>
+  <body>
+  <h2>Jquery</h2><hr>
+    <h3 id="problem"><b style="color:black">문제:</b>
+    버튼클릭하면 이동하는 기능적용하기</h3>
+    <table><tr><td width ="300">
+    <ul>
+      <li><ol type ="1" style ="color:green">
+            <li><button>click</button>
+                <p>자 출발~~고생많이했어요<br>
+                즐거운방학보내세요!</p>
+                <div>move</div>
+            </li>
+         </ol><br><br><br><br><br>
+       </td>
+       <td>
+        &lt;<ins>button</ins>click&lt;/button><br>
+        &lt;p>자 출발~~고생많이했어요<br>
+           즐거운방학보내세요!&lt;/p><br>
+         &lt;<ins>div</ins>>move &lt;/div><br><br><br><br><br>
+       </td><tr>
+       </table>
+      <li id ="box"> 답  <button onclick="show()">답확인</button><br>
+        $(document).ready(function( ){<br>
+        <span id ="span">
+        &nbsp;&nbsp;
+        $("button").click(function(){<br>
+         &nbsp;&nbsp;&nbsp;
+           $("div").animate(<br>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <br>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           left: '150px'<br>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  } <br>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; });<br>
+         &nbsp;&nbsp; });
+        </span>
+    </li>
+  </ul>  <a href ="index.html">home</a>
+  </body>
+</html>

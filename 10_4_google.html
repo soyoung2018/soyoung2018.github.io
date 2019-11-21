@@ -1,0 +1,75 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">    <title></title>
+    <style>
+      ol,ul { color:red;  list-style:none;   }
+      p     { color:black;     }
+      span  { visibility : hidden;  color : blue;  }
+      a{      font-size:30px;
+              background-color:yellow;
+      }
+      h3{
+        color:green;
+        font-weight: bold;
+      }
+      #box{
+        padding-left: 20px;
+        border:1px solid green;
+        width:660px;
+        height:210px;
+        font-weight: bold;
+      }
+      #problem{  color:red;  }
+      img{
+        width:500px;
+        height:300px;
+        border: 1px solid black;
+      }
+      </style>
+      <script src ="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+      <script>
+      function show() {
+           var obj =document.getElementById("span");
+           var style = window.getComputedStyle(obj);
+           var v = style.getPropertyValue("visibility");
+          if(v == "hidden")
+            obj.style.visibility = "visible";
+          else
+            obj.style.visibility = "hidden";
+        }
+      </script>
+    <script>
+   function win(){
+       window.open('http://www.google.com','_blank',width=200,height=200);
+   }
+    </script>
+  </head>
+  <body>
+  <h2>10장 윈도우와 브라우저 관련 객체</h2><h3></h3><hr>
+    <ul>
+    <li> <h3 id="problem"><b style="color:black">문제:</b>
+    이름이 google 인 윈도우를 열고 구글 웹페이지를 출력하시오.</li>
+         <ol type ="1" style ="color:green">
+           <li><form>
+              <input type ="button" value="1.구글창열기 태그내"
+                  onclick="window.open('http://www.google.com','_blank','width=200',height=200')"></form>
+           </li>
+           <li>  <input type ="button" value="2.구글창열기 win함수호출" onclick="win()"></li>
+           <li></li>
+           <li></li>
+         </ol><br>
+      <li id ="box">
+          답  <button onclick="show()">답확인</button><br>
+      <span id ="span">
+        1. 태그내<br>
+        input type ="button" value="구글창열기"<br>
+           onclick="window.open('http://www.google.com','_blank','width=200',height=200')"<br><br>
+        2.함수호출<br>
+        function win(){ <br>
+           window.open('http://www.google.com','_blank',width=200,height=200);<br>
+         }
+        </span>
+    </li>
+  </ul>  <a href ="index.html">home</a>
+  </body>
+</html>

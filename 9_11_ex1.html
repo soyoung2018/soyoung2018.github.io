@@ -1,0 +1,66 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">    <title></title>
+    <style>
+      ol,ul { color:red;  list-style:none;   }
+      p     { color:black;     }
+      span  { visibility : hidden;  color : blue;  }
+      a{      font-size:30px;
+              background-color:yellow;
+      }
+      h3{
+        color:green;
+        font-weight: bold;
+      }
+      #box{
+        padding-left: 20px;
+        border:1px solid green;
+        width:400px;
+        height:50px;
+        font-weight: bold;
+      }
+      #problem{  color:red;  }
+      img{
+        width:300px;
+        height:150px;
+        border: 1px solid black;
+      }
+      </style>
+      <script src ="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+      <script>
+      function show() {
+           var obj =document.getElementById("span");
+           var style = window.getComputedStyle(obj);
+           //Window.getComputedStyle() 메소드는
+           //인자로 전달받은 요소의 모든 CSS 속성값을 담은 객체를 반환함
+            var v = style.getPropertyValue("visibility");
+          if(v == "hidden")
+            obj.style.visibility = "visible";
+          else
+            obj.style.visibility = "hidden";
+        }
+      </script>
+      <script>
+
+        </script>
+  </head>
+  <body>
+    <h2>9장 이벤트 기초 및 활용</h2>
+    <h3>
+    </h3><hr>
+    <ul>&nbsp;&nbsp;&nbsp;
+    <li> <h3 id="problem"><b style="color:black">문제:</b>
+       자바스크립트 이벤트를 대한 설명으로 틀린것은?</li>
+         <ol type ="I" style ="color:green">
+           <li>1.마우스를 클릭하면 이벤트가 발행한다.</li>
+           <li>2.이벤트는 반드시 이벤트 타겟 객체에서만 처리한다.</li>
+           <li>3.이벤트를 발생시킨 DOM 객체를 이벤트 타겟이라고 부른다</li>
+           <li>4.발생한 이벤트에 관한 여러 정보를 가진 객체를 이벤트 객체라고 부른다.</li>
+         </ol>
+      <li id ="box"> 답  <button onclick="show()">답확인</button><br>
+      <span id ="span">2
+        </span>
+    </li>
+  </ul>  <a href ="index.html">home</a>
+  </body>
+</html>

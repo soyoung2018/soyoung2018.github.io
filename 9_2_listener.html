@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      ol,ul {   color:red;       }
+      p     {   color:black; width:300px;    }
+      span {
+      	visibility : hidden;
+      	color : blue;
+      }
+      a{
+        font-size:30px;
+        background-color:yellow;
+      }
+      h3{
+        color:green;
+        font-weight: bold;
+      }
+      #box{
+        padding-left: 20px;
+        border:1px solid green;
+        width:400px;
+        height:130px;
+      }
+      </style>
+      <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+      <script>
+      function show() {
+      	   var obj =document.getElementById("span");
+      	   var style = window.getComputedStyle(obj);
+      	   var v = style.getPropertyValue("visibility");
+      		if(v == "hidden")
+      			obj.style.visibility = "visible";
+      		else
+      			obj.style.visibility = "hidden";
+      	}
+      </script>
+      <script>
+          var p;
+          function init(){
+            p = document.getElementById("p");
+            p.onmouseover =fover;
+            p.onmouseout =fout;
+          }
+          function fover(){
+            p.style.backgroundColor ="orange";
+            pp.style.backgroundColor ="orange";
+          }
+          function fout(){
+            p.style.backgroundColor ="green";
+            p.style.fontSize ="30px"
+            pp.style.backgroundColor ="red";
+          }
+      </script>
+  </head>
+  <body>
+    <h2>9장 이벤트 기초 및 활용</h2>
+    <h3>이벤트가 발생하면 브라우저는 개발자가 작성한 이벤트리스너 코드를 호출하여 이벤트를 처리한다.</h3>
+    <hr>
+    function fover(){<br>
+      &nbsp;&nbsp;&nbsp;  p.style.backgroundColor ="orange";<br>
+      &nbsp;&nbsp;&nbsp;  }<br>
+
+  <ins>  &lt;p id="p"> - 마우스를 올려보세요-   &lt;/p></ins>
+    <ul>
+    <li>p태그를 클릭하면 init()함수를 실행하도록 onclick프로퍼티에 이벤트리스너를 등록하려면?
+     <p id = "p" onclick="init()">마우스를 올려보세요 </p>
+      <li id ="box"><button onclick="show()">답확인</button><br>
+      <span id = "span">function init(){<br>
+          <ins>p = document.getElementById("p");</ins><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;  p.onmouseover =fover;<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;  p.onmouseout =fout;<br>
+        }
+      </span>
+    </li>
+    <h3>script 안의 함수들</h3>
+    var p;                             <br>
+    function fover(){                      <br>
+      p.style.backgroundColor ="orange";   <br>
+      pp.style.backgroundColor ="orange";  <br>
+    }                                      <br>
+    function fout(){                      <br>
+      p.style.backgroundColor ="green";   <br>
+      p.style.fontSize ="30px"            <br>
+      pp.style.backgroundColor ="red";  <br>
+    }                                    <br>
+  </ul>  <a href ="index.html">home</a>
+  </body>
+</html>

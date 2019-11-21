@@ -1,0 +1,70 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">    <title></title>
+    <style>
+      ol,ul { color:red;  list-style:none;   }
+      p     { color:black;     }
+      span  { visibility : hidden;  color : blue;  }
+      a{      font-size:30px;
+              background-color:yellow;
+      }
+      h3{
+        color:green;
+        font-weight: bold;
+      }
+      #box{
+        padding-left: 20px;
+        border:1px solid green;
+        width:400px;
+        height:160px;
+      }
+      #problem{  color:red;  }
+      img{
+        width:300px;
+        height:250px;
+        border: 1px solid black;
+      }
+      </style>
+      <script src ="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+      <script>
+      function show() {
+           var obj =document.getElementById("span");
+           var style = window.getComputedStyle(obj);
+           var v = style.getPropertyValue("visibility");
+          if(v == "hidden")
+            obj.style.visibility = "visible";
+          else
+            obj.style.visibility = "hidden";
+        }
+      </script>
+  </head>
+  <body>
+    <h2>9장 이벤트 기초 및 활용</h2>
+    <h3></h3><hr>
+    <ul>&nbsp;&nbsp;&nbsp;
+    <li> <h3 id="problem"><b style="color:black">문제:</b>
+      포커스가 받게 될때 onfocus리스너가 호출되고--생략함<br>
+       포커스가 잃을땐 onblur리스너가 호출되도록 코딩하시오.
+      <p ><img  src="img/9-9.png"width ="100px" height="100px"></p></li>
+         <p style ="color:green">
+         이름 :&lt; input type="text" id="name"
+                        onblur="check(this)" /> 포커스를 잃을때 이벤트<br>
+         학번 :&lt; input type="text"> <p>
+          <ins>  코드</ins><br>
+           }<br>
+
+      <li id ="box"> 답  <button onclick="show()">
+        답확인</button><br>
+      <span id ="span">
+        function <ins>check(obj </ins>) {<br>
+&nbsp;&nbsp;&nbsp; if(obj.value == " ") {<br>
+&nbsp;&nbsp;&nbsp;    alert("enter name!");<br>
+&nbsp;&nbsp;&nbsp;	 <ins> obj.focus();</ins><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  	}<br>
+&nbsp;&nbsp;&nbsp;   }<br>
+        </span>
+    </li>
+  </ul>
+   <a href ="index.html">home</a>
+  </body>
+</html>

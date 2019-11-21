@@ -1,0 +1,68 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">    <title></title>
+    <style>
+      ol,ul { color:red;  list-style:none;   }
+      p     { color:black;     }
+      span  { visibility : hidden;  color : blue;  }
+      a{      font-size:30px;
+              background-color:yellow;
+      }
+      h3{
+        color:green;
+        font-weight: bold;
+      }
+      #box{
+        padding-left: 20px;
+        border:1px solid green;
+        width:400px;
+        height:140px;
+      }
+      #problem{  color:red;  }
+      img{
+        width:200px;
+        height:100px;
+        border: 1px solid black;
+      }
+      </style>
+      <script src ="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+      <script>
+      function show() {
+           var obj =document.getElementById("span");
+           var style = window.getComputedStyle(obj);
+            var v = style.getPropertyValue("visibility");
+          if(v == "hidden")
+            obj.style.visibility = "visible";
+          else
+            obj.style.visibility = "hidden";
+        }
+      </script>
+  </head>
+  <body>
+    <h2>9장 이벤트 기초 및 활용</h2>  <h3></h3><hr>
+    <ul>
+    <li> <h3 id="problem"> <b style="color:black">문제:  </b>
+      다음 select 옵션을 선택시 이미지가
+      선택나오도록 하기위해 <br>changeImage()메소드를 완성하시오.
+       <p ><img id="myImg" src="img/9_6_select.jpg"width ="100px" height="100px"></p></li>
+          <p style ="color:green">  function changeImage() {<br>
+              &nbsp;&nbsp;&nbsp;<ins>  코드</ins><br>
+            }<br>
+            &lt;form><br>
+          &lt; select id="sel" onchange="changeImage()" >함수호출<br>
+          &lt;option value ="img/apple.png"/>사과<br>
+            이하생략  <br>
+            &lt;/form>
+      <li id ="box"> 답  <button onclick="show()">답확인</button><br>
+
+      <span id ="span">
+        function changeImage() {<br>
+        	var sel = document.getElementById("sel");<br>
+        	var index= sel.selectedIndex;<br>
+        	img.src = sel.options[index].value;<br>
+        }<br>
+        </span>
+    </li>
+  </ul>  <a href ="index.html">home</a>
+  </body>
+</html>

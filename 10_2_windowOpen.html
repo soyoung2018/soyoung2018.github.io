@@ -1,0 +1,63 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">    <title></title>
+    <style>
+      ol,ul { color:red;  list-style:none;   }
+      p     { color:black;     }
+      span  { visibility : hidden;  color : blue;  }
+      a{      font-size:30px;
+              background-color:yellow;
+      }
+      h3{
+        color:green;
+        font-weight: bold;
+      }
+      #box{
+        padding-left: 20px;
+        border:1px solid green;
+        width:500px;
+        height:120px;
+        font-weight: bold;
+      }
+      #problem{  color:red;  }
+      img{
+        width:300px;
+        height:300px;
+        border: 1px solid black;
+      }
+      </style>
+      <script src ="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+      <script>
+      function show() {
+           var obj =document.getElementById("span");
+           var style = window.getComputedStyle(obj);
+           var v = style.getPropertyValue("visibility");
+          if(v == "hidden")
+            obj.style.visibility = "visible";
+          else
+            obj.style.visibility = "hidden";
+        }
+      </script>
+  </head>
+  <body>
+  <h2>10장 윈도우와 브라우저 관련 객체</h2><h3></h3><hr>
+    <ul>&nbsp;&nbsp;&nbsp;
+    <li> <h3 id="problem"><b style="color:black">문제:</b>
+       다음 지시에 따라 window.open( )함수를 작성하시오</li>
+         <ol type ="1" style ="color:green">
+           <li>1.이름이 win 인 새윈도우를 열어 test.html을 출력하시오.</li>
+           <li>2.현재 윈도우에 구글 웹페이지를 출력하도록 한다.</li>
+           <li>3.크기가 400 X 500인 새 윈도우에 네이버 페이지를 출력하시오.</li>
+           <li>4.이름이 google 인 윈도우를 열고 구글 웹페이지를 출력하시오</li>
+         </ol><br>
+      <li id ="box"> 답  <button onclick="show()">답확인</button><br>
+      <span id ="span">
+        1. window.open("test.html","win")<br>
+        2. window.open("http://www.google.com","_self")<br>
+        3. window.open("test.html","_blank",width =400,height=500)<br>
+        4. window.open("http://www.google.com","google")
+        </span>
+    </li>
+  </ul>  <a href ="index.html">home</a>
+  </body>
+</html>
